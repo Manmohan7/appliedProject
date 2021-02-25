@@ -9,8 +9,8 @@ const AppRouters = () =>
 
   (
     <Switch>
-      <Route exact path={`${routes.LOGIN}`} component={LoginIn} />
-      <Route exact path={`${routes.SIGNUP}`} component={SignUp} />
+      <Route exact path={`/${routes.LOGIN}`} component={LoginIn} />
+      <Route exact path={`/${routes.SIGNUP}`} component={SignUp} />
       {/* <Route exact path={`${routes.DASHBOARD}`} component={} /> */}
       <Route  path="*"render={() => <div>Page not Found</div>} />
     </Switch>
