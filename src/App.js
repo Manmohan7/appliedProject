@@ -13,11 +13,7 @@ function App() {
         <Router
           basename={`/`}
         >
-          <div className="app-container">
-            <div className="app-content-container">
-              <Routers />
-            </div>
-          </div>
+          <Routers />
         </Router>
       </Provider>
     </div>
