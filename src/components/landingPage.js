@@ -1,18 +1,36 @@
 import React from 'react'
-import { CssBaseline, Grid } from '@material-ui/core'
+
+import { CardMedia, CssBaseline, Dialog, Fab, Grid } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
+import ContactSupportIcon from '@material-ui/icons/ContactSupport';
+
 import NavBar from './navbar'
 import Products from './products'
+import ImageC from './ImageC'
 
 const useStyles = makeStyles({
   gridPad: {
     padding: '32px',
+  },
+  fabPosition: {
+    position: 'fixed',
+    bottom: '16px',
+    right: '16px'
   }
 })
 
 function LandingPage() {
 
   const classes = useStyles()
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   return (
     <Grid container>
@@ -24,7 +42,22 @@ function LandingPage() {
 
       <Grid container xs={12} spacing={3} className={classes.gridPad}>
         <Products />
+        </Grid>
+
+      <Grid container xs={12} spacing={3} className={classes.gridPad}>
+        <ImageC />
       </Grid>
+
+      <Fab color='primary' className={classes.fabPosition} onClick={handleClickOpen}>
+        <ContactSupportIcon />
+      </Fab>
+      <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
+        <CardMedia
+          component='iframe'
+          height='400'
+          src='https://console.dialogflow.com/api-client/demo/embedded/278e3a62-1734-41ab-8e6c-e9fedb281111'
+        />
+      </Dialog>
     </Grid>
   );
 };

@@ -14,7 +14,7 @@ export default function Products() {
 
   return (
     <Grid container spacing={2} className={classes.container}>
-      {[1,2,3,4].map(el => (
+      {[1,2,3,4,5,6,7,8,9,10,11,12].map(el => (
         <Grid key={el} item xs={12} sm={6} md={4} lg={3}>
           <Product  />
         </Grid>
