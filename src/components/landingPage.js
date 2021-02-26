@@ -3,6 +3,7 @@ import { CssBaseline, Grid } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import NavBar from './navbar'
 import Products from './products'
+import ImageC from './ImageC'
 
 const useStyles = makeStyles({
   gridPad: {
@@ -24,6 +25,10 @@ function LandingPage() {
 
       <Grid container xs={12} spacing={3} className={classes.gridPad}>
         <Products />
+        </Grid>
+
+      <Grid container xs={12} spacing={3} className={classes.gridPad}>
+        <ImageC />
       </Grid>
     </Grid>
   );
